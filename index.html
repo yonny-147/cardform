@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/bg-card-back.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="funciones.js"></script>
+  <title>Formulario de tarjetas</title>
+  
+</head>
+<body>
+  <div class="tarjetas">
+    <!--Tarjeta frontal-->
+    <div id="tarjeta_Frontal" class="tarjeta_Frontal">
+      <img src="images/card-logo.svg" alt="card">
+      <p class="p p0">0000 0000 0000 0000</p>
+      <p class="p p1">Jane Appleseed</p>
+      <p class="p p2">00/00</p>
+    </div>
+    <!--Tarjeta trasera-->
+    <div id="tarjeta_Trasera" class="tarjeta_Trasera">
+      <p class="p p3">000</p>
+    </div>
+  </div>
+  
+  <form id="formulario" action="">
+    <label class="mayus">Cardholder Name</label> 
+    <input id="CardholderName" name="CardholderName" placeholder="e.g. Jane Appleseed" type="text"> 
+    <span class="CampoVacio CampoVacioCardholderName"></span>
+    <label class="mayus">Card Number</label>
+    <input id="CardNumber" name="CardNumber" placeholder="e.g. 1234 5678 9123 0000" type="text"  maxlength="19"> 
+    <span class="CampoVacio CampoVacioCardNumber"></span>
+    
+    <div class="container_Grid">
+      <label class="label1 mayus">Exp. Date (MM/YY)</label>
+      <label class="label2 mayus">CVC</label>
+      <input id="Month" class="grid_1" name="Month" placeholder="MM" type="datetime" min="01" max="12" maxlength="2" >
+      <input id="Year" class="grid_2" name="Year" placeholder="YY" type="datetime" maxlength="2">
+      <input id="CVC" class="grid_3" name="CVC" placeholder="e.g. 123" maxlength="3">
+    </div>
+    <span class="CampoVacio CamposVacios"></span>
+    <button id="Confirm" class="button" onclick="funcionConfirmar()">Confirm</button>
+  </form>
+
+  <!-- Completed state start -->
+  <div class="state_start">
+    <img src="images/icon-complete.svg" alt="complete">
+    <h3>Thank you!</h3>
+    <h5>We've added your card details</h5>
+    <button id="Continue" class="button" onclick="funcionContinue()">Continue</button>
+  </div>
+</body>
+</html>
